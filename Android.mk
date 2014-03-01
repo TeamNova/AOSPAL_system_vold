@@ -1,22 +1,22 @@
 LOCAL_PATH:= $(call my-dir)
 
 ifneq ($(BOARD_VOLD_MAX_PARTITIONS),)
-common_cflags += -DVOLD_MAX_PARTITIONS=$(BOARD_VOLD_MAX_PARTITIONS)
+common_cflags += -DVOLD_MAX_PARTITIONS=$(BOARD_VOLD_MAX_PARTITIONS) -Wno-error=unused-parameter
 endif
 
 ifeq ($(BOARD_VOLD_EMMC_SHARES_DEV_MAJOR), true)
-common_cflags += -DVOLD_EMMC_SHARES_DEV_MAJOR
+common_cflags += -DVOLD_EMMC_SHARES_DEV_MAJOR -Wno-error=unused-parameter
 endif
 
 ifeq ($(BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS), true)
-common_cflags += -DVOLD_DISC_HAS_MULTIPLE_MAJORS
+common_cflags += -DVOLD_DISC_HAS_MULTIPLE_MAJORS -Wno-error=unused-parameter
 endif
 
 ifneq ($(TARGET_USE_CUSTOM_LUN_FILE_PATH),)
-common_cflags += -DCUSTOM_LUN_FILE=\"$(TARGET_USE_CUSTOM_LUN_FILE_PATH)\"
+common_cflags += -DCUSTOM_LUN_FILE=\"$(TARGET_USE_CUSTOM_LUN_FILE_PATH)\" -Wno-error=unused-parameter
 endif
 
-common_cflags += -Werror
+common_cflags += -Werror -Wno-error=unused-parameter
 
 common_src_files := \
 	VolumeManager.cpp \
