@@ -16,8 +16,6 @@ ifneq ($(TARGET_USE_CUSTOM_LUN_FILE_PATH),)
 common_cflags += -DCUSTOM_LUN_FILE=\"$(TARGET_USE_CUSTOM_LUN_FILE_PATH)\" -Wno-error=unused-parameter
 endif
 
-common_cflags += -Werror -Wno-error=unused-parameter
-
 common_src_files := \
 	VolumeManager.cpp \
 	CommandListener.cpp \
